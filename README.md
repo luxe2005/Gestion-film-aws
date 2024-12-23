@@ -36,3 +36,9 @@ aws dynamodb create-table \
     --key-schema AttributeName=title,KeyType=HASH \
     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
 
+aws dynamodb put-item --table-name Movies --item '{
+    "title": {"S": "Inception"},
+    "releaseYear": {"S": "2010"},
+    "genre": {"S": "Science Fiction, Action"},
+    "coverUrl": {"S": "https://your-s3-bucket-name/inception.jpg"}
+}'
